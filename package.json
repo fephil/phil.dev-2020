@@ -23,6 +23,8 @@
     "url": "git+https://fephil@github.com/fephil/phil.dev-2020.git"
   },
   "keywords": [
+    "portfolio",
+    "sanity",
     "eleventy",
     "jamstack",
     "webpack",
@@ -38,10 +40,13 @@
     "@11ty/eleventy": "^0.11.0",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
+    "@sanity/client": "^1.149.18",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.1",
+    "dotenv": "^8.2.0",
+    "groq": "^1.149.16",
     "html-minifier": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.1",
