@@ -4,10 +4,12 @@ const client = require('../_utils/sanityClient.js');
 async function getSiteSettings() {
   const filter = groq`*[_type == "siteSettings"]`;
   const projection = groq`{
-    _id,
     title,
     description,
     keywords,
+    availableText,
+    unavailableText,
+    startedDate,
   }[0]`;
   const query = [filter, projection].join(' ');
 
