@@ -8,7 +8,7 @@ description: 'Test Description.'
 {% endblock %}
 
 {% block content %}
-<h1 class="text-4xl mt-4 mb-8 border-t-2 border-b-2">Sanity Test</h1>
+<h1 class="text-4xl mt-16 mb-8 border-t-2 border-b-2">Sanity Test</h1>
 
 <p>homepage title: {{ homepage.title }}</p>
 <p>global title: {{ siteSettings.title }}</p>
@@ -19,7 +19,7 @@ description: 'Test Description.'
   {%- endfor -%}
 </ul>
 
-<h1 class="text-4xl mt-4 mb-8 border-t-2 border-b-2">Typography Test</h1>
+<h1 class="text-4xl mt-16 mb-8 border-t-2 border-b-2">Typography Test</h1>
 
 <h1 class="text-4xl">Header Level 1</h1>
 
@@ -42,6 +42,10 @@ description: 'Test Description.'
    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
    <li>Aliquam tincidunt mauris eu risus.</li>
 </ul>
+
+<h1 class="text-4xl mt-16 mb-8 border-t-2 border-b-2">Icons Test</h1>
+
+<i class="far fa-game-console-handheld"></i>
 {% endblock %}
 
 {% block pageFoot %}

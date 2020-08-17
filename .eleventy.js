@@ -6,6 +6,7 @@ const isProduction = process.env.ELEVENTY_ENV === 'production';
 module.exports = function(config) {
   // Layout Aliases
   config.addLayoutAlias('base', 'layouts/base.njk');
+  config.addLayoutAlias('placeholder', 'layouts/placeholder.njk');
 
   // Transforms
   config.addTransform('htmlmin', function(content, outputPath) {
