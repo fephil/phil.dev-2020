@@ -11,7 +11,11 @@ async function getSiteSettings() {
   }[0]`;
   const query = [filter, projection].join(' ');
 
-  const getData = await client.fetch(query).catch(err => console.error(err));
+  const getData = await client.fetch(query).catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
+
   return getData;
 }
 
