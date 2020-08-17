@@ -11,6 +11,13 @@ description: 'Test Description.'
 <h1 class="text-4xl mt-4 mb-8 border-t-2 border-b-2">Sanity Test</h1>
 
 <p>homepage title: {{ homepage.title }}</p>
+<p>global title: {{ siteSettings.title }}</p>
+<p>keywords test:</p>
+<ul>
+  {%- for keyword in siteSettings.keywords -%}
+  <li class="">{{ keyword }}</li>
+  {%- endfor -%}
+</ul>
 
 <h1 class="text-4xl mt-4 mb-8 border-t-2 border-b-2">Typography Test</h1>
 
