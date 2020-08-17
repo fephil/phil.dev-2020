@@ -6,14 +6,16 @@ async function getHomepage() {
   const projection = groq`{
     _id,
     title
-  }`;
+  }[0]`;
   const order = `| order(publishedAt asc)`;
   const query = [filter, projection, order].join(' ');
 
-  const getData = await client.fetch(query).catch(err => console.error(err));
+  const getData = await client.fetch(query).catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
 
-  // We only ever have one homepage so just return first object
-  return getData[0];
+  return getData;
 }
 
 module.exports = getHomepage
