@@ -5,12 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "clean": "del _dist",
-    "dev:css": "postcss src/css/site.css -o _dist/css/site.css --watch --verbose",
+    "clean": "del _site",
+    "dev:css": "postcss src/css/site.css -o _site/css/site.css --watch --verbose",
     "dev:eleventy": "eleventy --serve --watch",
     "dev:js": "webpack --config webpack.config.js --watch",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
-    "build:css": "NODE_ENV=production postcss src/css/site.css -o _dist/css/site.css",
+    "build:css": "NODE_ENV=production postcss src/css/site.css -o _site/css/site.css",
     "build:js": "webpack -p --config webpack.config.js",
     "analyze:build": "webpack --profile --json > _analyze.json",
     "analyze:serve": "webpack-bundle-analyzer _analyze.json",
@@ -28,7 +28,7 @@
     "webpack",
     "tailwind"
   ],
-  "author": "Phil Lennon",
+  "author": "Phil Lennon <enquiry@phil.dev>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fephil/phil.dev-2020/issues"

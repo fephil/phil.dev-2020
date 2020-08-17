@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "alias": ["phil.dev"],
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/index.html" }
+    ]
+}
