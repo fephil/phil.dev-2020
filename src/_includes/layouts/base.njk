@@ -6,23 +6,28 @@
   <!-- <link rel="icon" href="favicon.png" type="image/png" /> -->
   <title>Phil Lennon - Frontend Developer</title>
   <script>document.documentElement.classList.remove('no-js');</script>
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="https://kit.fontawesome.com/d0e135aee9.js" crossorigin="anonymous"></script>
   {% block pageHead %}
   {% endblock %}
 </head>
 <body>
   {% include "partials/global-header.njk" %}
 
-  <main id="content" tabindex="-1">
-    {% block content %}
-      {{ content | safe }}
-    {% endblock content %}
+  <main id="content">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto font-body">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock content %}
+      </div>
+    </div>
   </main>
 
   {% include "partials/global-footer.njk" %}
   {% block pageFoot %}
   {% endblock %}
 
-  <script src="js/bundle.js"></script>
+  <script src="/js/bundle.js"></script>
 </body>
 </html>
