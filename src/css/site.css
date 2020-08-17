@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Fonts */
 @font-face {
   font-family: 'Domine';
   font-style: normal;
@@ -38,3 +39,17 @@ ol {
 ul {
   @apply list-disc;
 }
+
+/* Special Styles */
+.fancy-link {
+  background-image: linear-gradient(120deg, #80fa93 0%, #8fbaf0 100%);
+  background-size: 100% 0.15rem;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 200ms ease-in;
+}
+
+.fancy-link:hover {
+  background-size: 100% 100%;
+}
+
