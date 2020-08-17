@@ -1,6 +1,10 @@
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      heading: ['Domine', 'serif'],
+      body: ['Montserrat', 'sans-serif'],
+    },
     extend: {},
   },
   variants: {},

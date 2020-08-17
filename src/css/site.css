@@ -1,3 +1,40 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@font-face {
+  font-family: 'Domine';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    url('/fonts/domine-latin-700.woff2') format('woff2'),
+    url('/fonts/domine-latin-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    url('/fonts/montserrat-latin-400.woff2') format('woff2'),
+    url('/fonts/montserrat-latin-400.woff') format('woff');
+}
+
+/* Generic styles */
+h1, h2, h3 {
+  @apply font-heading mb-4;
+}
+
+p, ol, ul {
+  @apply mb-4 leading-relaxed;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+ul {
+  @apply list-disc;
+}
