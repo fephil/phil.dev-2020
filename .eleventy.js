@@ -1,6 +1,7 @@
 
 const htmlmin = require('html-minifier');
 const blocksToHtml = require('@sanity/block-content-to-html')
+const getImage = require('./src/_utils/getImage')
 
 const isProduction = process.env.ELEVENTY_ENV === 'production';
 
