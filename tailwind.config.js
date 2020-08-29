@@ -1,5 +1,4 @@
 module.exports = {
-  purge: [],
   theme: {
     fontFamily: {
       heading: ['Domine', 'serif'],
@@ -15,5 +14,8 @@ module.exports = {
       './src/**/*.njk',
       './.eleventy.js',
     ]
+  },
+  future: {
+    removeDeprecatedGapUtilities: true,
   },
 }
