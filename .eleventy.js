@@ -1,5 +1,6 @@
 
 const htmlmin = require('html-minifier');
+const blocksToHtml = require('@sanity/block-content-to-html')
 
 const isProduction = process.env.ELEVENTY_ENV === 'production';
 
@@ -34,6 +35,12 @@ module.exports = function(config) {
   });
 
   // Filters
+  config.addFilter('sanityHTML', function(value) {
+    return blocksToHtml({
+      blocks: value,
+    })
+  })
+
   config.addFilter('getImage', function(value) {
     return getImage(value).auto('format').quality(80).url();
   })
