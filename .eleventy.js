@@ -34,7 +34,9 @@ module.exports = function(config) {
   });
 
   // Filters
-  // TBA
+  config.addFilter('getImage', function(value) {
+    return getImage(value).auto('format').quality(80).url();
+  })
 
   // Collections
   // TBA
