@@ -4,7 +4,7 @@ const client = require('../_utils/sanityClient.js');
 async function getHomepage() {
   const filter = groq`*[_type == "homepage"]`;
   const projection = groq`{
-    title,
+    pageTitle,
     promoImage,
     availableContent,
     unavailableContent,
