@@ -4,8 +4,18 @@ const client = require('../_utils/sanityClient.js');
 async function getHomepage() {
   const filter = groq`*[_type == "homepage"]`;
   const projection = groq`{
-    _id,
-    title
+    title,
+    promoImage,
+    availableContent,
+    unavailableContent,
+    block1Title,
+    block1Content,
+    block2Title,
+    block2Content,
+    block3Title,
+    block3Content,
+    partners,
+    currentTech
   }[0]`;
   const order = `| order(publishedAt asc)`;
   const query = [filter, projection, order].join(' ');

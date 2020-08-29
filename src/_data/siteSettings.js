@@ -7,9 +7,7 @@ async function getSiteSettings() {
     title,
     description,
     keywords,
-    availableText,
-    unavailableText,
-    startedDate,
+    availability,
   }[0]`;
   const query = [filter, projection].join(' ');
 
