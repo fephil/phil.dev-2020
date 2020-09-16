@@ -1,6 +1,7 @@
 
 const htmlmin = require('html-minifier');
 const blocksToHtml = require('@sanity/block-content-to-html')
+const serializers = require('./src/_utils/serializers')
 const getImage = require('./src/_utils/getImage')
 
 const isProduction = process.env.ELEVENTY_ENV === 'production';
@@ -36,19 +37,7 @@ module.exports = function(config) {
   });
 
   // Filters
-  const h = blocksToHtml.h
-
-  const serializers = {
-    types: {
-      dateAvailable: (props) => {
-        console.log(props);
-        return h('span', {className: 'js-available-date font-bold'}, props.dateAvailable)
-      }
-    }
-  }
-
   config.addFilter('sanityHTML', function(value) {
-    console.log(value)
     return blocksToHtml({
       blocks: value,
       serializers: serializers
