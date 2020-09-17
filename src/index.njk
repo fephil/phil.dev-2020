@@ -16,6 +16,8 @@ eleventyComputed:
   <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
 </figure>
 
-{{ homepage.blockContent | sanityHTML | safe }} {{ availabilityText | sanityHTML | safe }}
+<div class="content">
+  {{ homepage.blockContent | sanityHTML | safe }} {{ availabilityText | sanityHTML | safe }}
+</div>
 
 {% endblock %}

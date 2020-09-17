@@ -23,20 +23,33 @@
     url('/fonts/montserrat-latin-400.woff') format('woff');
 }
 
-/* Generic styles */
-h1, h2, h3 {
-  @apply font-heading mb-4;
+/* CMS Styles */
+.content h1 {
+  @apply font-heading mb-4 text-3xl;
 }
 
-p, ol, ul {
+.content h2 {
+  @apply font-heading mb-4 text-2xl;
+}
+
+.content h3 {
+  @apply font-heading mb-4 text-xl;
+}
+
+.content p {
   @apply mb-4 leading-relaxed;
 }
 
-ol {
+.content ol,
+.content ul {
+  @apply ml-4 mb-4 leading-relaxed;
+}
+
+.content ol {
   @apply list-decimal;
 }
 
-ul {
+.content ul {
   @apply list-disc;
 }
 
