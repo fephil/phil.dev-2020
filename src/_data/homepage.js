@@ -6,6 +6,15 @@ async function getHomepage() {
   const projection = groq`{
     pageTitle,
     promoImage,
+    blockContent[]{
+      ...,
+      children[]{
+        ...,
+        _type == "dateStartedReference" => {
+        	"date": @.date->date,
+        }
+      }
+    },
     availableContent[]{
       ...,
       children[]{
@@ -15,8 +24,15 @@ async function getHomepage() {
         }
       }
     },
-    unavailableContent,
-    blockContent,
+    unavailableContent[]{
+      ...,
+      children[]{
+        ...,
+        _type == "dateAvailableReference" => {
+        	"date": @.date->date,
+        }
+      }
+    },
     partners,
     currentTech
   }[0]`;
