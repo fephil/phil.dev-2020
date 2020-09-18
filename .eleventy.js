@@ -32,8 +32,8 @@ module.exports = function(config) {
   config.addPassthroughCopy({ 'public': '/' });
 
   // Shortcodes
-  config.addNunjucksShortcode('test', function(item) {
-    return `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium">${item}</span>`;
+  config.addNunjucksShortcode('tech', function(item) {
+    return `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mr-2 mb-4">${item}</span>`;
   });
 
   // Filters
