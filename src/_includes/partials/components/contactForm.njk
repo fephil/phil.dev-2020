@@ -12,18 +12,18 @@
 </div>
 
 <form id="js-contact-form" action="https://formspree.io/mwkwkeap" method="POST">
-  <label class="block text-gray-800 text-sm font-heading mb-2" for="email">Name:</label>
-  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="name" required name="name" />
+  <label class="block text-gray-800 text-sm font-heading mb-2" for="name">Name:</label>
+  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="name" required id="name" name="name" />
 
   <label class="block text-gray-800 text-sm font-heading mt-4 mb-2" for="email">Email:</label>
-  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" required name="email" />
+  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" required id="email" name="email" />
 
   <label class="block text-gray-800 text-sm font-heading mt-4 mb-2" for="message">Message:</label>
-  <textarea class="appearance-none border rounded w-full max-w-md h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" required name="message"></textarea>
+  <textarea class="appearance-none border rounded w-full max-w-md h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" required id="message" name="message"></textarea>
 
   <input class="hidden" type="text" name="_gotcha" />
 
   <div class="block">
-    <button class="mt-6 bg-green-500 hover:bg-green-700 text-white font-heading py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Send</button>
+    <button class="mt-6 bg-green-700 hover:bg-green-900 text-white font-heading py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Send</button>
   </div>
 </form>
