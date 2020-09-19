@@ -4,7 +4,7 @@ import parseISO from 'date-fns/parseISO';
 export default function() {
   const startDateEl = document.getElementsByClassName('js-started-date');
 
-  if (!startDateEl) {
+  if (startDateEl === undefined || startDateEl.length === 0) {
     return
   }
 
