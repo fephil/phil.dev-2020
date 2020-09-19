@@ -1,5 +1,8 @@
 
 const htmlmin = require('html-minifier');
+const blocksToHtml = require('@sanity/block-content-to-html')
+const serializers = require('./src/_utils/serializers')
+const getImage = require('./src/_utils/getImage')
 
 const isProduction = process.env.ELEVENTY_ENV === 'production';
 
@@ -29,12 +32,21 @@ module.exports = function(config) {
   config.addPassthroughCopy({ 'public': '/' });
 
   // Shortcodes
-  config.addNunjucksShortcode('test', function(item) {
-    return `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium">${item}</span>`;
+  config.addNunjucksShortcode('tags', function(item, textColor, bgColor) {
+    return `<span class="inline-flex items-center px-4 py-1 rounded-full text-sm ${textColor} ${bgColor} mr-2 mb-4">${item}</span>`;
   });
 
   // Filters
-  // TBA
+  config.addFilter('sanityHTML', function(value) {
+    return blocksToHtml({
+      blocks: value,
+      serializers: serializers
+    })
+  })
+
+  config.addFilter('getImage', function(value) {
+    return getImage(value).auto('format').quality(80).url();
+  })
 
   // Collections
   // TBA

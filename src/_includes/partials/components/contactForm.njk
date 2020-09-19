@@ -1,0 +1,29 @@
+<div id="js-contact-form-success" class="hidden">
+  <p>Thank you, your enquiry has been <span class="text-green-600 font-bold">sent.</span></p>
+</div>
+
+<div id="js-contact-form-error" class="hidden">
+  <p class="mb-4">Apoligies, there has been an <span class="text-red-600 font-bold">error.</span> Please get in touch with me using the details above.</p>
+  <p>The technical error has been logged so I will look into the problem ASAP.</p>
+</div>
+
+<div id="js-contact-form-loading" class="hidden flex justify-center">
+  <i class="far fa-spinner-third animate-spin text-3xl my-16"></i>
+</div>
+
+<form id="js-contact-form" action="https://formspree.io/mwkwkeap" method="POST">
+  <label class="block text-gray-800 text-sm font-heading mb-2" for="name">Name:</label>
+  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="name" required id="name" name="name" />
+
+  <label class="block text-gray-800 text-sm font-heading mt-4 mb-2" for="email">Email:</label>
+  <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" required id="email" name="email" />
+
+  <label class="block text-gray-800 text-sm font-heading mt-4 mb-2" for="message">Message:</label>
+  <textarea class="appearance-none border rounded w-full max-w-md h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" required id="message" name="message"></textarea>
+
+  <input class="hidden" type="text" name="_gotcha" />
+
+  <div class="block">
+    <button class="mt-6 bg-green-700 hover:bg-green-900 text-white font-heading py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Send</button>
+  </div>
+</form>

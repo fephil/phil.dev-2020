@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   mode: process.env.ELEVENTY_ENV || 'development',
   entry: {
@@ -7,6 +9,11 @@ module.exports = {
     path: __dirname + '/_site/js/',
     filename: 'bundle.js',
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      projectVersion: JSON.stringify(require('./package.json').version)
+    })
+  ],
   module: {
     rules: [
       {

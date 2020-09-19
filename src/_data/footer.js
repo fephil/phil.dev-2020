@@ -1,13 +1,11 @@
 const groq = require('groq');
 const client = require('../_utils/sanityClient.js');
 
-async function getSiteSettings() {
-  const filter = groq`*[_type == "siteSettings"]`;
+async function getFooter() {
+  const filter = groq`*[_type == "footer"]`;
   const projection = groq`{
-    globalTitle,
-    description,
-    keywords,
-    availability,
+    about,
+    business
   }[0]`;
   const query = [filter, projection].join(' ');
 
@@ -19,4 +17,4 @@ async function getSiteSettings() {
   return getData;
 }
 
-module.exports = getSiteSettings
+module.exports = getFooter
