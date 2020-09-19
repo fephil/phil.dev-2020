@@ -1,3 +1,19 @@
-<footer role="contentinfo" class="flex-initial h-16 bg-gray-400">
-  [Footer]
+<footer role="contentinfo" class="flex-initial bg-gray-200">
+  <div class="max-w-screen-lg mx-auto py-8 px-4 sm:px-6 lg:py-12 lg:px-8">
+    <div class="md:grid md:grid-cols-3 md:gap-8">
+      <div class="md:col-span-2 text-sm">
+        <div class="content">
+          {{ footer.about | sanityHTML | safe }}
+          <p>View <a href="https://github.com/fephil/phil.dev-2020" class="fancy-link">website source code <i class="far fa-external-link"></i></a></p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-500 mt-4 pt-4 md:pt-0 md:mt-0 md:border-t-0 md:col-span-1 md:flex md:flex-col">
+        <div class="md:flex-grow"></div>
+        <div class="content text-sm pt-4">
+          {{ footer.business | sanityHTML | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
