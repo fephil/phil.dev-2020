@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
 import startDayCalculator from './modules/startDayCalculator.js';
+import contactForm from './modules/contactForm.js';
 
 Sentry.init({
   dsn: 'https://26409a2261d447b6b5827e9b6469c1fc@o77665.ingest.sentry.io/5434439',
@@ -12,3 +13,4 @@ Sentry.init({
 });
 
 startDayCalculator();
+contactForm();
