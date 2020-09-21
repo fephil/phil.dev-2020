@@ -33,7 +33,7 @@ module.exports = function(config) {
 
   // Shortcodes
   config.addNunjucksShortcode('tags', function(item, textColor, bgColor) {
-    return `<span class="inline-flex items-center px-4 py-1 rounded-full text-sm ${textColor} ${bgColor} mr-2 mb-4">${item}</span>`;
+    return `<span class="inline-flex items-center px-4 py-1 rounded-full text-xs md:text-sm ${textColor} ${bgColor} mr-2 mb-4">${item}</span>`;
   });
 
   // Filters
