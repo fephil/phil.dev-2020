@@ -9,7 +9,6 @@ module.exports = {
   variants: {},
   plugins: [],
   purge: {
-    mode: 'all',
     content: [
       './src/**/*.njk',
       './.eleventy.js',
