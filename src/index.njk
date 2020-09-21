@@ -12,26 +12,28 @@ eleventyComputed:
 
 {% block content %}
 <div class="js-audio mb-8">
-  <figure class="js-audio-image cursor-pointer block">
-    <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
-    <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
-  </figure>
+  <button class="js-audio-image focus:outline-none block">
+    <figure>
+      <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
+      <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
+    </figure>
+  </button>
   <div class="js-audio-player relative justify-center items-center hidden">
-    <div class="js-audio-close absolute top-0 right-0 cursor-pointer">
+    <button class="js-audio-close focus:outline-none absolute top-0 right-0">
       <i class="js-audio-close far fa-times text-3xl pa-4"></i>
-    </div>
+    </button>
 
     <audio class="js-audio-element" preload='none'>
       <source src="{{homepage.audioUrl}}" type="audio/mp3" />
     </audio>
 
     <div>
-      <div class="js-audio-play block cursor-pointer">
+      <button class="js-audio-play block focus:outline-none">
         <i class="far fa-play-circle text-6xl"></i>
-      </div>
-      <div class="js-audio-pause hidden cursor-pointer">
+      </button>
+      <button class="js-audio-pause hidden focus:outline-none">
         <i class="far fa-pause-circle text-6xl"></i>
-      </div>
+      </button>
       <p class="text-xs mt-2">Sound on!</p>
     </div>
   </div>
