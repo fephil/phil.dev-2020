@@ -11,10 +11,31 @@ eleventyComputed:
 {% endif %}
 
 {% block content %}
-<figure class="mb-8">
-  <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
-  <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
-</figure>
+<div class="js-audio mb-8">
+  <figure class="js-audio-image block">
+    <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
+    <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
+  </figure>
+  <div class="js-audio-player relative justify-center items-center hidden">
+    <div class="js-audio-close absolute top-0 right-0 cursor-pointer">
+      <i class="js-audio-close far fa-times text-3xl pa-4"></i>
+    </div>
+
+    <audio class="js-audio-element" preload='none'>
+      <source src="{{homepage.audioUrl}}" type="audio/mp3" />
+    </audio>
+
+    <div>
+      <div class="js-audio-play block cursor-pointer">
+        <i class="far fa-play-circle text-6xl"></i>
+      </div>
+      <div class="js-audio-pause hidden cursor-pointer">
+        <i class="far fa-pause-circle text-6xl"></i>
+      </div>
+      <p class="text-xs mt-2">Sound on!</p>
+    </div>
+  </div>
+</div>
 
 <div class="content">
   {{ homepage.blockContent | sanityHTML | safe }}
