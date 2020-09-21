@@ -12,7 +12,7 @@ eleventyComputed:
 
 {% block content %}
 <div class="js-audio mb-8">
-  <figure class="js-audio-image block">
+  <figure class="js-audio-image cursor-pointer block">
     <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
     <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
   </figure>
