@@ -14,26 +14,28 @@ export default function() {
   const playEl = document.querySelector('.js-audio-play');
   const pauseEl = document.querySelector('.js-audio-pause');
 
-  imageEl.addEventListener('click', () => {
-    swapToPlayer()
-  });
+  window.addEventListener('DOMContentLoaded', () => {
+    imageEl.addEventListener('click', () => {
+      swapToPlayer()
+    });
 
-  closeEl.addEventListener('click', () => {
-    swapToImage()
-  });
+    closeEl.addEventListener('click', () => {
+      swapToImage()
+    });
 
-  playEl.addEventListener('click', () => {
-    swapToPause();
-    audioEl.play();
-  });
+    playEl.addEventListener('click', () => {
+      swapToPause();
+      audioEl.play();
+    });
 
-  pauseEl.addEventListener('click', () => {
-    swapToPlay();
-    audioEl.pause();
-  });
+    pauseEl.addEventListener('click', () => {
+      swapToPlay();
+      audioEl.pause();
+    });
 
-  audioEl.addEventListener('ended', () => {
-    swapToPlay();
+    audioEl.addEventListener('ended', () => {
+      swapToPlay();
+    });
   });
 
   function swapToPlayer() {
