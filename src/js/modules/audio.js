@@ -16,16 +16,18 @@ export default function() {
 
   window.addEventListener('DOMContentLoaded', () => {
     imageEl.addEventListener('click', () => {
-      swapToPlayer()
+      swapToPlayer();
+      window.fathom.trackGoal('UVZPFFEK', 0);
     });
 
     closeEl.addEventListener('click', () => {
-      swapToImage()
+      swapToImage();
     });
 
     playEl.addEventListener('click', () => {
       swapToPause();
       audioEl.play();
+      window.fathom.trackGoal('L3KJCC3F', 0);
     });
 
     pauseEl.addEventListener('click', () => {
