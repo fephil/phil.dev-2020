@@ -44,19 +44,19 @@ eleventyComputed:
   {{ availabilityText | sanityHTML | safe }}
 </div>
 
-<h2 class="font-heading text-2xl mt-8 mb-4">Technology Stack</h2>
-
-<ul class="">
-{% for current in homepage.currentTech %}
-  <li class="inline-block">{% tags current, "bg-purple-100", "text-purple-800" %}</li>
-{% endfor %}
-</ul>
-
-<h2 class="font-heading text-2xl mt-4 mb-4">Previous Partners</h2>
+<h2 class="font-heading text-2xl mt-8 mb-4">Previous Partners</h2>
 
 <ul class="">
 {% for partner in homepage.partners %}
   <li class="inline-block">{% tags partner, "bg-orange-100", "text-orange-800" %}</li>
+{% endfor %}
+</ul>
+
+<h2 class="font-heading text-2xl mt-4 mb-4">Technology Stack</h2>
+
+<ul class="">
+{% for current in homepage.currentTech %}
+  <li class="inline-block">{% tags current, "bg-purple-100", "text-purple-800" %}</li>
 {% endfor %}
 </ul>
 
