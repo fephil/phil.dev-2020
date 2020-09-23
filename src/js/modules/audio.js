@@ -43,24 +43,24 @@ export default function() {
   function swapToPlayer() {
     playerEl.setAttribute('style', `height:${imageEl.clientHeight}px`);
 
-    animate(imageEl, 'flipOutY').then((message) => {
+    animate(imageEl, 'flipOutX').then((message) => {
       imageEl.classList.remove('block');
       imageEl.classList.add('hidden');
       playerEl.classList.remove('hidden');
       playerEl.classList.add('flex');
 
-      animate(playerEl, 'flipInY').then((message) => {});
+      animate(playerEl, 'flipInX').then((message) => {});
     });
   }
 
   function swapToImage() {
-    animate(playerEl, 'flipOutY').then((message) => {
+    animate(playerEl, 'flipOutX').then((message) => {
       playerEl.classList.remove('block');
       playerEl.classList.add('hidden');
       imageEl.classList.remove('hidden');
       imageEl.classList.add('block');
 
-      animate(imageEl, 'flipInY').then((message) => {});
+      animate(imageEl, 'flipInX').then((message) => {});
     });
   }
 
