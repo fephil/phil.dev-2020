@@ -1,6 +1,6 @@
 {
   "name": "phil.dev-2020",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "The website for Phil Lennon (frontendphil)",
   "main": "index.js",
   "private": true,
