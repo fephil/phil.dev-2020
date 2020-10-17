@@ -1,16 +1,19 @@
 const isPast = require('date-fns/isPast')
 const parseISO = require('date-fns/parseISO')
+const format = require('date-fns/format')
 const blocksToHtml = require('@sanity/block-content-to-html')
 const h = blocksToHtml.h
 
 const serializers = {
   types: {
     dateAvailableReference: (props) => {
+      const theDate = parseISO(props.node.date);
       let theText
-      if (isPast(parseISO(props.node.date))) {
+
+      if (isPast(theDate)) {
         theText = 'Now'
       } else {
-        theText = props.node.date
+        theText = format(theDate, 'do LLLL yyyy');
       }
 
       return h('span', {className: 'js-available-date font-bold'}, theText)
