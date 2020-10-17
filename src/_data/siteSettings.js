@@ -8,6 +8,7 @@ async function getSiteSettings() {
     description,
     keywords,
     availability,
+    contact,
   }[0]`;
   const query = [filter, projection].join(' ');
 

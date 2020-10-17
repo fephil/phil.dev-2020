@@ -69,10 +69,12 @@ eleventyComputed:
   <li>Phone: <a class="fancy-link" href="tel:03334441250">0333 444 1250 <i class="far fa-external-link"></i></a></li>
 </ul>
 
-<div class="mt-8 border-2 px-4 py-6">
-  <h3 class="font-heading text-md mb-8">Quickly Contact Me Now</h3>
+{% if siteSettings.contact %}
+  <div class="mt-8 border-2 px-4 py-6">
+    <h3 class="font-heading text-md mb-8">Quickly Contact Me Now</h3>
 
-  {% include "partials/components/contactForm.njk" %}
-</div>
+    {% include "partials/components/contactForm.njk" %}
+  </div>
+{% endif %}
 
 {% endblock %}
