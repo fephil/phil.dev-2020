@@ -1,4 +1,7 @@
+/* eslint-disable global-require */
+
 const ESLintPlugin = require('eslint-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
@@ -18,5 +21,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new ESLintPlugin()],
+  plugins: [
+    new ESLintPlugin(),
+    new webpack.DefinePlugin({
+      projectVersion: JSON.stringify(require('./package.json').version),
+    }),
+  ],
 };
