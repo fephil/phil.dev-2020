@@ -15,4 +15,4 @@
 
 This is the source code for the website of Phil Lennon.
 
-This website has been made with my frontend website workflow [jamstack-website](https://github.com/fephil/jamstack-website).
+This website has been made with my frontend website workflow [jamstack-website v0.3](https://github.com/fephil/jamstack-website).

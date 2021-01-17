@@ -1,10 +1,10 @@
-import animate from './animate'
+import animate from './animate';
 
-export default function() {
+const audio = () => {
   const containerEl = document.querySelector('.js-audio');
 
   if (!containerEl) {
-    return
+    return;
   }
 
   const imageEl = document.querySelector('.js-audio-image');
@@ -13,6 +13,44 @@ export default function() {
   const audioEl = document.querySelector('.js-audio-element');
   const playEl = document.querySelector('.js-audio-play');
   const pauseEl = document.querySelector('.js-audio-pause');
+
+  function swapToPlayer() {
+    playerEl.setAttribute('style', `height:${imageEl.clientHeight}px`);
+
+    animate(imageEl, 'flipOutX').then(() => {
+      imageEl.classList.remove('block');
+      imageEl.classList.add('hidden');
+      playerEl.classList.remove('hidden');
+      playerEl.classList.add('flex');
+
+      animate(playerEl, 'flipInX').then(() => {});
+    });
+  }
+
+  function swapToImage() {
+    animate(playerEl, 'flipOutX').then(() => {
+      playerEl.classList.remove('block');
+      playerEl.classList.add('hidden');
+      imageEl.classList.remove('hidden');
+      imageEl.classList.add('block');
+
+      animate(imageEl, 'flipInX').then(() => {});
+    });
+  }
+
+  function swapToPause() {
+    playEl.classList.remove('block');
+    playEl.classList.add('hidden');
+    pauseEl.classList.remove('hidden');
+    pauseEl.classList.add('block');
+  }
+
+  function swapToPlay() {
+    pauseEl.classList.remove('block');
+    pauseEl.classList.add('hidden');
+    playEl.classList.remove('hidden');
+    playEl.classList.add('block');
+  }
 
   window.addEventListener('DOMContentLoaded', () => {
     imageEl.addEventListener('click', () => {
@@ -39,42 +77,6 @@ export default function() {
       swapToPlay();
     });
   });
+};
 
-  function swapToPlayer() {
-    playerEl.setAttribute('style', `height:${imageEl.clientHeight}px`);
-
-    animate(imageEl, 'flipOutX').then((message) => {
-      imageEl.classList.remove('block');
-      imageEl.classList.add('hidden');
-      playerEl.classList.remove('hidden');
-      playerEl.classList.add('flex');
-
-      animate(playerEl, 'flipInX').then((message) => {});
-    });
-  }
-
-  function swapToImage() {
-    animate(playerEl, 'flipOutX').then((message) => {
-      playerEl.classList.remove('block');
-      playerEl.classList.add('hidden');
-      imageEl.classList.remove('hidden');
-      imageEl.classList.add('block');
-
-      animate(imageEl, 'flipInX').then((message) => {});
-    });
-  }
-
-  function swapToPause() {
-    playEl.classList.remove('block');
-    playEl.classList.add('hidden');
-    pauseEl.classList.remove('hidden');
-    pauseEl.classList.add('block');
-  }
-
-  function swapToPlay() {
-    pauseEl.classList.remove('block');
-    pauseEl.classList.add('hidden');
-    playEl.classList.remove('hidden');
-    playEl.classList.add('block');
-  }
-}
+export default audio;

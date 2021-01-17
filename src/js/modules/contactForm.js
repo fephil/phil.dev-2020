@@ -1,10 +1,10 @@
-import * as Sentry from "@sentry/browser";
+import * as Sentry from '@sentry/browser';
 
-export default function() {
+const contactForm = () => {
   const contactFormEl = document.getElementById('js-contact-form');
 
   if (!contactFormEl) {
-    return
+    return;
   }
 
   const successEl = document.getElementById('js-contact-form-success');
@@ -34,29 +34,29 @@ export default function() {
     fetch(contactFormEl.action, {
       method: 'POST',
       headers: {
-        'Accept': 'application/json'
+        Accept: 'application/json',
       },
-      body: new FormData(contactFormEl)
+      body: new FormData(contactFormEl),
     })
-    .then(response => response.json())
-    .then(response => {
-      loadingEl.classList.remove('block');
-      loadingEl.classList.add('hidden');
+      .then((response) => response.json())
+      .then((response) => {
+        loadingEl.classList.remove('block');
+        loadingEl.classList.add('hidden');
 
-      if (!response.ok) {
+        if (!response.ok) {
+          sendError();
+          Sentry.captureMessage(response.error);
+          return;
+        }
+
+        sendSuccess();
+      })
+      .catch((error) => {
+        loadingEl.classList.remove('block');
+        loadingEl.classList.add('hidden');
         sendError();
-        Sentry.captureMessage(response.error);
-        return;
-      }
-
-      sendSuccess();
-    })
-    .catch((error) => {
-      loadingEl.classList.remove('block');
-      loadingEl.classList.add('hidden');
-      sendError();
-      Sentry.captureException(error);
-    });
+        Sentry.captureException(error);
+      });
   }
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -64,9 +64,7 @@ export default function() {
       event.preventDefault();
       sendData();
     });
-  })
-}
+  });
+};
 
-
-
-
+export default contactForm;

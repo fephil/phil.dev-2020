@@ -9,13 +9,6 @@ module.exports = {
   variants: {},
   plugins: [],
   purge: {
-    content: [
-      './src/**/*.njk',
-      './.eleventy.js',
-    ]
+    content: ['./src/**/*.njk', './src/js/modules/**/*.js', './.eleventy.js'],
   },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-}
+};

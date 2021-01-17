@@ -37,10 +37,11 @@ async function getHomepage() {
     partners,
     currentTech
   }[0]`;
-  const order = `| order(publishedAt asc)`;
+  const order = `| order(publishedAt asc)`;
   const query = [filter, projection, order].join(' ');
 
-  const getData = await client.fetch(query).catch(error => {
+  const getData = await client.fetch(query).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error(error);
     process.exit(1);
   });
@@ -48,4 +49,4 @@ async function getHomepage() {
   return getData;
 }
 
-module.exports = getHomepage
+module.exports = getHomepage;

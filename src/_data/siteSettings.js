@@ -12,7 +12,8 @@ async function getSiteSettings() {
   }[0]`;
   const query = [filter, projection].join(' ');
 
-  const getData = await client.fetch(query).catch(error => {
+  const getData = await client.fetch(query).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error(error);
     process.exit(1);
   });
@@ -20,4 +21,4 @@ async function getSiteSettings() {
   return getData;
 }
 
-module.exports = getSiteSettings
+module.exports = getSiteSettings;

@@ -1,5 +1,5 @@
 const animate = (element, animation, prefix = 'animate__') =>
-  new Promise((resolve, reject) => {
+  new Promise((resolve) => {
     const animationName = `${prefix}${animation}`;
 
     element.classList.add(`${prefix}animated`, animationName);
@@ -9,7 +9,7 @@ const animate = (element, animation, prefix = 'animate__') =>
       resolve('Animation ended');
     }
 
-    element.addEventListener('animationend', handleAnimationEnd, {once: true});
+    element.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
 
 export default animate;
