@@ -26,14 +26,18 @@ eleventyComputed:
   <p>Find me on: <a class="fancy-link" href="https://twitter.com/frontendphil">Twitter</a>, <a class="fancy-link" href="https://www.linkedin.com/in/frontendphil">LinkedIn</a>, <a class="fancy-link" href="https://github.com/fephil">GitHub</a>, <a class="fancy-link" href="http://bit.ly/life-list">Trello Life Goals List</a> or <a class="fancy-link" href="https://www.instagram.com/philjameslennon/">Instagram</a>.</p>
 </div>
 
+<div class="mb-16">
+{% if homepage.projects.length %}
 <h2 class="font-heading text-3xl mt-12 mb-6">Featured Projects</h2>
-<div class="mb-12">
-  <p>TBA.</p>
+  {% for project in homepage.projects %}
+    {% include "partials/components/featuredProject.njk" %}
+  {% endfor %}
+{% endif %}
 </div>
 
 {% include "partials/components/promoImage.njk" %}
 
-<h2 class="font-heading text-3xl mt-12 mb-6">Previous Partners</h2>
+<h2 class="font-heading text-3xl mt-16 mb-6">Previous Partners</h2>
 
 <ul class="-mx-2.5">
 {% for partner in homepage.partners %}

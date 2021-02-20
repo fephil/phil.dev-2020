@@ -8,6 +8,14 @@ async function getHomepage() {
     avatarImage,
     promoImage,
     "audioUrl": audio.asset->url,
+    projects[]-> {
+      title,
+      tags,
+      featuredCopy,
+      featuredImage,
+      linkUrl,
+      linkName
+    },
     blockContent[]{
       ...,
       children[]{
