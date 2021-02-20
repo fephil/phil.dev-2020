@@ -9,6 +9,7 @@ async function getSiteSettings() {
     keywords,
     availability,
     contact,
+    business
   }[0]`;
   const query = [filter, projection].join(' ');
 

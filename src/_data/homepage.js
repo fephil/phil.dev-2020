@@ -5,8 +5,17 @@ async function getHomepage() {
   const filter = groq`*[_type == "homepage"]`;
   const projection = groq`{
     pageTitle,
+    avatarImage,
     promoImage,
     "audioUrl": audio.asset->url,
+    projects[]-> {
+      title,
+      tags,
+      featuredCopy,
+      featuredImage,
+      linkUrl,
+      linkName
+    },
     blockContent[]{
       ...,
       children[]{

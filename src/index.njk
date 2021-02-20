@@ -11,70 +11,56 @@ eleventyComputed:
 {% endif %}
 
 {% block content %}
-<div class="js-audio mb-8">
-  <button class="js-audio-image focus:outline-none block">
-    <figure>
-      <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
-      <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
-    </figure>
-  </button>
-  <div class="js-audio-player relative justify-center items-center hidden">
-    <button class="js-audio-close focus:outline-none absolute top-0 right-0">
-      <i class="js-audio-close far fa-times text-3xl pa-4"></i>
-    </button>
 
-    <audio class="js-audio-element" preload='none'>
-      <source src="{{homepage.audioUrl}}" type="audio/mp3" />
-    </audio>
-
-    <div>
-      <button class="js-audio-play block focus:outline-none">
-        <i class="far fa-play-circle text-6xl"></i>
-      </button>
-      <button class="js-audio-pause hidden focus:outline-none">
-        <i class="far fa-pause-circle text-6xl"></i>
-      </button>
-      <p class="text-xs mt-2">Sound on!</p>
-    </div>
-  </div>
-</div>
-
-<div class="content">
-  {{ homepage.blockContent | sanityHTML | safe }}
+<div class="mb-8">
+  <h1 class="font-heading mt-32 mb-0 text-5xl">frontendphil</h1>
   {{ availabilityText | sanityHTML | safe }}
 </div>
 
-<h2 class="font-heading text-2xl mt-8 mb-4">Previous Partners</h2>
+<div class="block-content flex items-center space-x-4 mb-8">
+  <img class="rounded-full w-16 h-16 lg:w-32 lg:h-32" src="{{ homepage.avatarImage | getImage }}" alt="{{ homepage.avatarImage.alt }}" />
+  {{ homepage.blockContent | sanityHTML | safe }}
+</div>
 
-<ul class="">
+<div class="block-content">
+  <p>Find me on: <a class="fancy-link" href="https://twitter.com/frontendphil">Twitter</a>, <a class="fancy-link" href="https://www.linkedin.com/in/frontendphil">LinkedIn</a>, <a class="fancy-link" href="https://github.com/fephil">GitHub</a>, <a class="fancy-link" href="http://bit.ly/life-list">Trello Life Goals List</a> or <a class="fancy-link" href="https://www.instagram.com/philjameslennon/">Instagram</a>.</p>
+</div>
+
+<div class="mb-16">
+{% if homepage.projects.length %}
+<h2 class="font-heading text-3xl mt-12 mb-6">Featured Projects</h2>
+  {% for project in homepage.projects %}
+    {% include "partials/components/featuredProject.njk" %}
+  {% endfor %}
+{% endif %}
+</div>
+
+{% include "partials/components/promoImage.njk" %}
+
+<h2 class="font-heading text-3xl mt-16 mb-6">Previous Partners</h2>
+
+<ul class="-mx-2.5">
 {% for partner in homepage.partners %}
-  <li class="inline-block">{% tags partner, "bg-yellow-100", "text-yellow-800" %}</li>
+  <li class="inline-block px-2.5 py-1.5 text-xs text-gray-700 mb-2">{{ partner }}</li>
 {% endfor %}
 </ul>
 
-<h2 class="font-heading text-2xl mt-4 mb-4">Technology Stack</h2>
+<h2 class="font-heading text-3xl mt-12 mb-6">Technology Stack</h2>
 
-<ul class="">
-{% for current in homepage.currentTech %}
-  <li class="inline-block">{% tags current, "bg-purple-100", "text-purple-800" %}</li>
+<ul class="-mx-2.5">
+{% for tech in homepage.currentTech %}
+  <li class="inline-block px-2.5 py-1.5 text-xs text-gray-700 mb-2">{{ tech }}</li>
 {% endfor %}
 </ul>
 
-<h2 class="font-heading text-2xl mt-4 mb-4">Get In Touch</h2>
+<h2 class="font-heading text-3xl mt-12 mb-6">Get in Touch</h2>
 
-<p>Find me on <a class="fancy-link" href="https://twitter.com/frontendphil">Twitter <i class="far fa-external-link"></i></a>, <a class="fancy-link" href="https://www.linkedin.com/in/frontendphil">LinkedIn <i class="far fa-external-link"></i></a>, <a class="fancy-link" href="https://github.com/fephil">GitHub <i class="far fa-external-link"></i></a> or look at my <a class="fancy-link" href="http://bit.ly/life-list">Trello Life Goals List <i class="far fa-external-link"></i></a> or <a class="fancy-link" href="https://www.instagram.com/philjameslennon/">Instagram <i class="far fa-external-link"></i></a> to learn more about me.</p>
-
-<ul class="mt-4">
-  <li>Email: <a class="fancy-link" href="mailto:enquiry@phil.dev">enquiry@phil.dev <i class="far fa-external-link"></i></a></li>
-  <li>Phone: <a class="fancy-link" href="tel:03334441250">0333 444 1250 <i class="far fa-external-link"></i></a></li>
-</ul>
+<div class="block-content mb-6">
+  <p>Email: <a class="fancy-link" href="mailto:enquiry@phil.dev">enquiry@phil.dev</a>. Telephone: <a class="fancy-link" href="tel:03334441250">0333 444 1250</a></p>
+</div>
 
 {% if siteSettings.contact %}
-  <div class="mt-8 border-2 px-4 py-6">
-    <h3 class="font-heading text-md mb-8">Quickly Contact Me Now</h3>
-
-    {% include "partials/components/contactForm.njk" %}
-  </div>
+  {% include "partials/components/contactForm.njk" %}
 {% endif %}
 
 {% endblock %}
