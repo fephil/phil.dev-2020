@@ -1,0 +1,27 @@
+<div class="js-audio mb-8">
+  <button class="js-audio-image focus:outline-none block">
+    <figure>
+      <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
+      <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
+    </figure>
+  </button>
+  <div class="js-audio-player relative justify-center items-center hidden">
+    <button class="js-audio-close focus:outline-none absolute top-0 right-0">
+      <i class="js-audio-close far fa-times text-3xl pa-4"></i>
+    </button>
+
+    <audio class="js-audio-element" preload='none'>
+      <source src="{{homepage.audioUrl}}" type="audio/mp3" />
+    </audio>
+
+    <div>
+      <button class="js-audio-play block focus:outline-none">
+        <i class="far fa-play-circle text-6xl"></i>
+      </button>
+      <button class="js-audio-pause hidden focus:outline-none">
+        <i class="far fa-pause-circle text-6xl"></i>
+      </button>
+      <p class="text-xs mt-2">Sound on!</p>
+    </div>
+  </div>
+</div>
