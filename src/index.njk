@@ -28,7 +28,7 @@ eleventyComputed:
 
 <div class="mb-16">
 {% if homepage.projects.length %}
-<h2 class="font-heading text-3xl mt-12 mb-6">Featured Projects</h2>
+<h2 class="font-heading text-3xl mt-12 mb-6">Featured Project{% if homepage.projects.length > 1 %}s{% endif %}</h2>
   {% for project in homepage.projects %}
     {% include "partials/components/featuredProject.njk" %}
   {% endfor %}
