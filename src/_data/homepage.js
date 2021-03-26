@@ -6,13 +6,19 @@ async function getHomepage() {
   const projection = groq`{
     pageTitle,
     avatarImage,
-    promoImage,
+    promoImage {
+      ...,
+  	  asset->
+	  },
     "audioUrl": audio.asset->url,
     projects[]-> {
       title,
       tags,
       featuredCopy,
-      featuredImage,
+      featuredImage {
+        ...,
+        asset->
+      },
       linkUrl,
       linkName
     },

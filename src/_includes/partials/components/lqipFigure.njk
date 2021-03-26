@@ -1,0 +1,16 @@
+
+<figure>
+  <div
+    class="bg-cover bg-no-repeat relative w-full"
+    style="background-image: url({{ image.asset.metadata.lqip }}); padding-top: calc(100% / {{ image.asset.metadata.dimensions.aspectRatio }})"
+  >
+    <img
+      class="absolute top-0 left-0"
+      src="{% getImageUrl image, width %}"
+      alt="{{ image.alt }}"
+    />
+  </div>
+  {% if image.caption %}
+    <figcaption class="text-right text-xs mt-1">{{ image.caption }}</figcaption>
+  {% endif %}
+</figure>
