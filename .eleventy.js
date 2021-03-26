@@ -31,8 +31,8 @@ module.exports = function (config) {
   config.addPassthroughCopy({ public: '/' });
 
   // Shortcodes
-  config.addShortcode('getImageUrl', (image, width = '1000') => {
-    return getImage(image).width(width).auto('format').quality(100);
+  config.addShortcode('getImageUrl', (image, width, height) => {
+    return getImage(image).width(width).height(height).auto('format').quality(100);
   });
 
   // Filters
