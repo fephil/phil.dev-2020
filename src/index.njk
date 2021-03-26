@@ -18,7 +18,7 @@ eleventyComputed:
 </div>
 
 <div class="block-content md:flex md:items-center md:space-x-4 mb-8">
-  <img class="rounded-full m-auto mb-4 w-32 h-32" src="{% getImageUrl homepage.avatarImage, 128 %}" alt="{{ homepage.avatarImage.alt }}" />
+  <img class="rounded-full m-auto mb-4 w-32 h-32" src="{% getImageUrl homepage.avatarImage, 256 %}" alt="{{ homepage.avatarImage.alt }}" />
   {{ homepage.blockContent | sanityHTML | safe }}
 </div>
 
