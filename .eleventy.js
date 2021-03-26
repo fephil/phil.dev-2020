@@ -31,7 +31,9 @@ module.exports = function (config) {
   config.addPassthroughCopy({ public: '/' });
 
   // Shortcodes
-  // ...
+  config.addShortcode('getImageUrl', (image, width = '1000') => {
+    return getImage(image).width(width).auto('format').quality(100);
+  });
 
   // Filters
   config.addFilter('sanityHTML', function (value) {
@@ -39,10 +41,6 @@ module.exports = function (config) {
       blocks: value,
       serializers: serializers,
     });
-  });
-
-  config.addFilter('getImage', function (value) {
-    return getImage(value).auto('format').quality(80).url();
   });
 
   // Collections

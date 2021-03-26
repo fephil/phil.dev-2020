@@ -1,9 +1,8 @@
 <div class="js-audio">
-  <button class="js-audio-image focus:outline-none block">
-    <figure>
-      <img src="{{ homepage.promoImage | getImage }}" alt="{{ homepage.promoImage.alt }}" />
-      <figcaption class="text-right text-xs mt-1">{{ homepage.promoImage.caption }}</figcaption>
-    </figure>
+  <button class="js-audio-image focus:outline-none block w-full">
+    {% set image = homepage.promoImage %}
+    {% set width = 672 %}
+    {% include "partials/components/lqipFigure.njk" %}
   </button>
   <div class="js-audio-player relative justify-center items-center hidden">
     <button class="js-audio-close focus:outline-none absolute top-0 right-0">

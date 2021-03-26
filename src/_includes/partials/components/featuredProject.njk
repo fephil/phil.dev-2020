@@ -1,5 +1,7 @@
 <div class="md:flex items-start md:space-x-4 mb-8">
-  <img class="hidden md:block w-48" src="{{ project.featuredImage | getImage }}" alt="{{ project.featuredImage.alt }}" />
+  {% if project.featuredImage %}
+  <img class="hidden md:block w-48" src="{% getImageUrl project.featuredImage, 192 %}" alt="{{ project.featuredImage.alt }}" />
+  {% endif %}
 
   <div>
     <h3 class="font-heading text-xl mb-4">{{ project.title }}</h3>
