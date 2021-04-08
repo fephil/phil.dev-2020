@@ -78,7 +78,6 @@
     "@sanity/image-url": "^0.140.22",
     "@sentry/browser": "^6.2.5",
     "@sentry/tracing": "^6.2.5",
-    "animate.css": "^4.1.1",
     "date-fns": "^2.20.0",
     "dotenv": "^8.2.0",
     "groq": "^2.2.6"
