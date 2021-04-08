@@ -8,6 +8,7 @@ const sanity = {
 
 module.exports = sanityClient({
   ...sanity,
+  apiVersion: '2021-04-08',
   useCdn: !process.env.SANITY_READ_TOKEN,
   token: process.env.SANITY_READ_TOKEN,
 });

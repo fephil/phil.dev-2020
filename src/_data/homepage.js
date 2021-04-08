@@ -51,7 +51,7 @@ async function getHomepage() {
     },
     partners,
     currentTech
-  }[0]`;
+  }`;
   const order = `| order(publishedAt asc)`;
   const query = [filter, projection, order].join(' ');
 
@@ -61,7 +61,8 @@ async function getHomepage() {
     process.exit(1);
   });
 
-  return getData;
+  const firstItem = getData[0];
+  return firstItem;
 }
 
 module.exports = getHomepage;

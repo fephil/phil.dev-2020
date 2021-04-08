@@ -10,7 +10,7 @@ async function getSiteSettings() {
     availability,
     contact,
     business
-  }[0]`;
+  }`;
   const query = [filter, projection].join(' ');
 
   const getData = await client.fetch(query).catch((error) => {
@@ -19,7 +19,8 @@ async function getSiteSettings() {
     process.exit(1);
   });
 
-  return getData;
+  const firstItem = getData[0];
+  return firstItem;
 }
 
 module.exports = getSiteSettings;
