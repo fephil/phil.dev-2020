@@ -15,12 +15,12 @@
   {% block pageHead %}
   {% endblock %}
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen bg-white dark:bg-gray-800">
   {% include "partials/globals/header.njk" %}
 
   <main id="main" class="flex-1">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-      <div class="max-w-2xl mx-auto font-body mt-8">
+      <div class="max-w-2xl mx-auto font-body mt-8 text-gray-900 dark:text-white">
         {% block content %}
           {{ content | safe }}
         {% endblock content %}
