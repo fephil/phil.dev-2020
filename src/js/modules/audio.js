@@ -17,24 +17,24 @@ const audio = () => {
   function swapToPlayer() {
     playerEl.setAttribute('style', `height:${imageEl.clientHeight}px`);
 
-    animate(imageEl, 'flipOutX').then(() => {
+    animate(imageEl, 'fadeOut').then(() => {
       imageEl.classList.remove('block');
       imageEl.classList.add('hidden');
       playerEl.classList.remove('hidden');
       playerEl.classList.add('flex');
 
-      animate(playerEl, 'flipInX').then(() => {});
+      animate(playerEl, 'fadeIn').then(() => {});
     });
   }
 
   function swapToImage() {
-    animate(playerEl, 'flipOutX').then(() => {
+    animate(playerEl, 'fadeOut').then(() => {
       playerEl.classList.remove('block');
       playerEl.classList.add('hidden');
       imageEl.classList.remove('hidden');
       imageEl.classList.add('block');
 
-      animate(imageEl, 'flipInX').then(() => {});
+      animate(imageEl, 'fadeIn').then(() => {});
     });
   }
 
@@ -55,7 +55,10 @@ const audio = () => {
   window.addEventListener('DOMContentLoaded', () => {
     imageEl.addEventListener('click', () => {
       swapToPlayer();
-      window.fathom.trackGoal('UVZPFFEK', 0);
+
+      if (window.fathom) {
+        window.fathom.trackGoal('UVZPFFEK', 0);
+      }
     });
 
     closeEl.addEventListener('click', () => {
@@ -65,7 +68,10 @@ const audio = () => {
     playEl.addEventListener('click', () => {
       swapToPause();
       audioEl.play();
-      window.fathom.trackGoal('L3KJCC3F', 0);
+
+      if (window.fathom) {
+        window.fathom.trackGoal('L3KJCC3F', 0);
+      }
     });
 
     pauseEl.addEventListener('click', () => {
