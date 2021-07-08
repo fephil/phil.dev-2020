@@ -1,6 +1,6 @@
 {
   "name": "phil.dev-2020",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "The website for Phil Lennon (frontendphil)",
   "main": "index.js",
   "private": true,
@@ -24,7 +24,7 @@
     "url": "git+https://fephil@github.com/fephil/phil.dev-2020.git"
   },
   "engines": {
-    "node": ">=16",
+    "node": "14 || 16",
     "npm": "~7.10.0"
   },
   "keywords": [
