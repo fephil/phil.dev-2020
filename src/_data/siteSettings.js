@@ -1,5 +1,5 @@
 const groq = require('groq');
-const client = require('../_utils/sanityClient.js');
+const client = require('../_utils/sanityClient');
 
 async function getSiteSettings() {
   const filter = groq`*[_type == "siteSettings"]`;
@@ -18,6 +18,11 @@ async function getSiteSettings() {
     console.error(error);
     process.exit(1);
   });
+
+  if (!Array.isArray(getData) || !getData.length) {
+    console.error('ERROR: siteSettings getData is empty');
+    process.exit(1);
+  }
 
   const firstItem = getData[0];
   return firstItem;

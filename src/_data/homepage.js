@@ -1,5 +1,5 @@
 const groq = require('groq');
-const client = require('../_utils/sanityClient.js');
+const client = require('../_utils/sanityClient');
 
 async function getHomepage() {
   const filter = groq`*[_type == "homepage"]`;
@@ -60,6 +60,11 @@ async function getHomepage() {
     console.error(error);
     process.exit(1);
   });
+
+  if (!Array.isArray(getData) || !getData.length) {
+    console.error('ERROR: homepage getData is empty');
+    process.exit(1);
+  }
 
   const firstItem = getData[0];
   return firstItem;
