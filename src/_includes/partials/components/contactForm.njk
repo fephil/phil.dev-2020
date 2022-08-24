@@ -3,16 +3,15 @@
 </div>
 
 <div id="js-contact-form-error" class="hidden">
-  <p class="mb-4">Apoligies, there has been an <span class="text-red-600 font-bold">error.</span> Please get in touch with me using the details above.</p>
+  <p class="mb-4">Apoligies, there has been an <span class="text-red-600 font-bold">error.</span> when submitting your enquiry. Please get in touch with me using the details above.</p>
   <p>The technical error has been logged so I will look into the problem ASAP.</p>
 </div>
 
-<div id="js-contact-form-loading" class="hidden flex justify-center">
+<div id="js-contact-form-loading" class="hidden justify-center">
   <i class="far fa-spinner-third animate-spin text-3xl my-16"></i>
 </div>
 
 <form id="js-contact-form" action="https://formspree.io/mwkwkeap" method="POST">
-
   <label class="block text-gray-800 text-sm mb-2" for="name">Name:</label>
   <input class="appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="name" required id="name" name="name" />
 
@@ -24,9 +23,11 @@
 
   <input class="hidden" type="text" name="_gotcha" />
 
+  <div class="mt-2 g-recaptcha" data-sitekey="6Ldyzp8hAAAAAJYi6CtcDmmYRSkINp51koco6ejv"></div>
+
   <p class="mt-2 text-md">All fields are mandatory.</p>
 
   <div class="block">
-    <button class="mt-6 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Send</button>
+    <button class="mt-8 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Send</button>
   </div>
 </form>

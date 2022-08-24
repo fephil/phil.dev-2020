@@ -1,6 +1,6 @@
 {
   "name": "phil.dev-2020",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "The website for Phil Lennon (frontendphil)",
   "main": "package.json",
   "private": true,
@@ -21,8 +21,8 @@
     "url": "git+https://fephil@github.com/fephil/phil.dev-2020.git"
   },
   "engines": {
-    "node": "14 || 16",
-    "npm": "~7.10.0"
+    "node": "~16",
+    "npm": "~8"
   },
   "keywords": [
     "portfolio",

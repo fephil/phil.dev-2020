@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="/css/site.css">
   <script src="https://kit.fontawesome.com/d0e135aee9.js" crossorigin="anonymous" defer></script>
   <script src="https://magpie.phil.dev/script.js" site="QEBTFWWB" defer></script>
+  {% if siteSettings.contact %}
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  {% endif %}
 
   <!-- Hi! Source code is available at: https://github.com/fephil/phil.dev-2020 -->
   {% block pageHead %}

@@ -87,7 +87,7 @@
 }
 
 /* Styles copied from animate.css */
-/* NOTE: This was done because there isn't an easy way od just importing a specific style into the project */
+/* NOTE: This was done because there isn't an easy way of just importing a specific style into the project */
 
 /*!
  * animate.css - https://animate.style/
@@ -97,7 +97,7 @@
  * Copyright (c) 2020 Animate.css
  */
 :root {
-  --animate-duration: 1s;
+  --animate-duration: 0.5s;
   --animate-delay: 1s;
   --animate-repeat: 1;
 }
