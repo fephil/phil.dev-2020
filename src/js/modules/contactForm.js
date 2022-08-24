@@ -64,6 +64,11 @@ const contactForm = () => {
       event.preventDefault();
       sendData();
     });
+
+    const el = document.getElementById('g-recaptcha-response');
+    if (el) {
+      el.setAttribute('required', 'required');
+    }
   });
 };
 
